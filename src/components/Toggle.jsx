@@ -5,11 +5,11 @@ const Toggle = () => {
   const [isToggled, setIsToggled] = useState(false);
 
   return (
-    <div className="flex flex-col text-sm gap-3 w-[100px] h-[100px] transition duration-200 border border-neutral-800 rounded-md items-center justify-center">
+    <div className="flex flex-col text-sm gap-3 h-[100px] transition relative duration-200 border border-zinc-800 rounded-md items-center justify-center">
       <button
         onClick={() => setIsToggled(!isToggled)}
         className={clsx(
-          "font-light text-lg hover:bg-zinc-800 transition duration-200 rounded-lg px-4 py-2 cursor-pointer",
+          "font-light text-lg hover:bg-zinc-800 transition duration-200 rounded-lg px-3 py-1 cursor-pointer",
           { "text-white": isToggled, "hover:text-zinc-400": !isToggled }
         )}
       >

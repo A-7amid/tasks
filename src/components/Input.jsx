@@ -1,27 +1,29 @@
 import clsx from "clsx";
 import React, { useState } from "react";
+import { GoX } from "react-icons/go";
 
 const Input = () => {
   const [invalidSubmit, setInvalidSubmit] = useState(true);
   const [username, setUsername] = useState("");
-  const [show, setShow] = useState(false);
+  const [submited, setSubmited] = useState(false);
+  const [showExit, setShowExit] = useState(false);
 
   const handleSumbit = () => {
     if (username.length < 3) {
       return setInvalidSubmit(false);
     }
     setInvalidSubmit(true);
-    setShow(true);
+    setSubmited(true);
   };
 
   return (
-    <div className="flex flex-col text-sm gap-3 w-[400px] h-[200px] transition duration-200 border border-neutral-800 rounded-md items-center justify-center">
-      <div>
+    <div className="flex flex-col text-sm gap-3  h-[200px] transition duration-200 border border-zinc-800 rounded-md items-center justify-center">
+      <div className="w-[290px]">
         <label htmlFor="username" className="flex flex-col gap-2">
           <span
             className={clsx({
               "text-white": invalidSubmit,
-              "text-red-800": !invalidSubmit,
+              "text-red-900 font-medium": !invalidSubmit,
             })}
           >
             Username
@@ -34,10 +36,10 @@ const Input = () => {
               setUsername(e.target.value);
             }}
             placeholder="Tobi"
-            className="border border-neutral-800 rounded-sm px-3 py-1"
+            className="border border-zinc-800 rounded-sm px-3 py-1"
           />
           {!invalidSubmit && (
-            <span className="flex w-fit text-red-800 text-sm">
+            <span className="flex text-red-900 text-xs">
               Username must be at least 3 characters.
             </span>
           )}
@@ -51,10 +53,12 @@ const Input = () => {
       </div>
 
       <div
+        onMouseEnter={() => setShowExit(true)}
+        onMouseLeave={() => setShowExit(false)}
         className={clsx(
-          "invisible absolute flex flex-col p-4 gap-4 right-5 bottom-5 border w-[400px] border-neutral-800 rounded-md",
+          "invisible absolute flex flex-col p-4 gap-4 right-5 bottom-5 border w-[400px] border-zinc-800 rounded-md",
           {
-            "visible bg-zinc-950": show,
+            "visible bg-zinc-950": submited,
           }
         )}
       >
@@ -63,10 +67,16 @@ const Input = () => {
             You submitted the following values:
           </h4>
           <span
-            onClick={() => setShow(false)}
-            className="text-zinc-500 text-xl cursor-pointer hover:text-zinc-200 -mt-4"
+            onClick={() => setSubmited(false)}
+            className={clsx(
+              "text-zinc-500 text-xl transition duration-200 cursor-pointer hover:flex hover:text-zinc-200 -mt-2",
+              {
+                "flex transtion ": showExit,
+                "hidden transtion": !showExit,
+              }
+            )}
           >
-            x
+            <GoX />
           </span>
         </div>
 

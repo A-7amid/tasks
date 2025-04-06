@@ -1,1 +1,57 @@
 @import "tailwindcss";
+
+.main-container {
+  @apply gap-y-5 flex flex-col;
+}
+
+.slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+}
+
+/* Track styling */
+.slider::-webkit-slider-runnable-track {
+  @apply h-1 rounded-full bg-slate-100;
+}
+
+.slider::-moz-range-track {
+  @apply h-1 rounded-full bg-slate-100;
+}
+
+/* Progress track (filled portion) */
+.slider::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    to right,
+    rgb(15 23 42) 0%,
+    rgb(15 23 42) 50%,
+    rgb(241 245 249) 50%,
+    rgb(241 245 249) 100%
+  );
+}
+
+.slider::-moz-range-progress {
+  @apply bg-slate-900 h-1 rounded-l-full;
+}
+
+/* Thumb styling */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  @apply h-4 w-4 rounded-full bg-white border-2 border-slate-900 shadow;
+  transform: translateY(calc(-50% + 2px));
+  transition: transform 0.2s ease;
+}
+
+.slider::-moz-range-thumb {
+  @apply h-4 w-4 rounded-full bg-white border-2 border-slate-900 shadow;
+  transition: transform 0.2s ease;
+}
+
+/* Hover effects */
+.slider::-webkit-slider-thumb:hover {
+  transform: translateY(calc(-50% + 2px)) scale(1.1);
+}
+
+.slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+}
