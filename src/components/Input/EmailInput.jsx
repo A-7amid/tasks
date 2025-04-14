@@ -15,9 +15,11 @@ const EmailInput = () => {
     // console.log(email);
     // console.log(emailRef.current);
     if (emailRef.current.value.length < 3) {
-      return setInvalidSubmit(true);
+      setInvalidSubmit(true);
+      return setSubmitted(false);
     }
-    setInvalidSubmit(true);
+
+    setInvalidSubmit(false);
     setSubmitted(true);
   };
 
