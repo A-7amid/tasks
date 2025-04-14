@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .main-container {
-  @apply gap-y-5 flex flex-col;
+  @apply lg:gap-y-5 flex flex-col lg:gap-x-4 gap-y-1;
 }
 
 .slider {

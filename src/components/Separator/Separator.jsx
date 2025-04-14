@@ -2,7 +2,7 @@ import React from "react";
 
 const Separator = () => {
   return (
-    <div className="flex flex-col text-sm gap-3 relative h-[200px] transition duration-200 border border-neutral-800 rounded-md items-center justify-center">
+    <div className="flex flex-col h-52  text-sm gap-3 relative lg:h-[140px] transition duration-200 border border-neutral-800 rounded-xl items-center justify-center">
       <div>
         <h5 className="font-semibold text-md mb-1">Radix Primitives</h5>
         <span className="text-zinc-300">

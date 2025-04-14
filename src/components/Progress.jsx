@@ -10,7 +10,7 @@ const Progress = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-3 relative h-[150px] transition duration-200 border border-zinc-800 rounded-md items-center justify-center">
+    <div className="flex flex-col h-52  gap-3 relative lg:h-full transition duration-200 border border-zinc-800 rounded-xl items-center justify-center">
       <div>
         <div className="relative bg-zinc-700 w-64 h-2 flex rounded-md">
           <div

@@ -2,7 +2,7 @@ import React from "react";
 
 const RadioGroups = () => {
   return (
-    <div className="flex flex-col text-sm gap-3 relative h-[200px] transition duration-200 border border-zinc-800 rounded-md items-center justify-center">
+    <div className="flex h-52  flex-col text-sm gap-3 relative lg:h-[140px] transition duration-200 border border-zinc-800 rounded-xl items-center justify-center">
       <fieldset className="flex flex-col gap-2">
         <h4 className="font-semibold">Notify me about...</h4>
 
