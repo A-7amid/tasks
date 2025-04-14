@@ -9,16 +9,16 @@ const TextInput = ({
   className,
   label,
   placeholder,
-  handleSubmit,
-  invalidSubmit,
+  checkEmail,
+  invalidEmail,
 }) => {
   return (
     <div className="lg:w-[290px]">
       <label htmlFor={name} className="flex flex-col gap-2">
         <span
           className={clsx({
-            "text-white": !invalidSubmit,
-            "text-red-900 font-medium": invalidSubmit,
+            "text-white": !invalidEmail,
+            "text-red-900 font-medium": invalidEmail,
           })}
         >
           {label}
@@ -29,10 +29,10 @@ const TextInput = ({
           className={className}
           type={type}
           ref={nameRef}
-          onKeyDown={handleSubmit}
+          onKeyDown={checkEmail}
         />
 
-        {invalidSubmit && (
+        {invalidEmail && (
           <span className="flex text-red-900 text-xs">
             {name} must be at least 3 characters.
           </span>
