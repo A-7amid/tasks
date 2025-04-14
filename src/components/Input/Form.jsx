@@ -8,29 +8,15 @@ const Form = () => {
   const [shown, setShown] = useState(false);
   const [exitShown, setExitShown] = useState(false);
 
-  const emailRef = useRef("");
-
-  const checkEmail = (e) => {
-    if (e.key !== "Enter") return;
-
-    if (emailRef.current.value.length < 3) {
-      setInvalidEmail(true);
-      return setShown(false);
-    }
-
-    setInvalidEmail(false);
-    setShown(true);
-  };
+  const email = useRef("");
 
   return (
     <div className="flex h-52 flex-col text-sm gap-3 lg:h-[160px] transition duration-200 border border-zinc-800 rounded-xl items-center justify-center">
       <TextInput
         type="text"
-        name="email"
+        name={email}
         label="Email"
-        nameRef={emailRef}
         placeholder="tobi@gmail.com"
-        checkEmail={checkEmail}
         invalidEmail={invalidEmail}
         className="border border-zinc-800 rounded-sm px-3 py-1"
       />
@@ -66,7 +52,7 @@ const Form = () => {
         <div className="text-xs font-mono bg-slate-950 h-20 flex flex-col gap-2 p-3 rounded-md w-full">
           <span> {"{"}</span>
           <span>
-            "{`email`}": "{emailRef.current.value}"
+            "{`email`}": "{email.current.value}"
           </span>
           <span> {"}"}</span>
         </div>

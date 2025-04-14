@@ -5,11 +5,9 @@ import { SiNamebase } from "react-icons/si";
 const TextInput = ({
   type,
   name,
-  nameRef,
   className,
   label,
   placeholder,
-  checkEmail,
   invalidEmail,
 }) => {
   return (
@@ -28,8 +26,7 @@ const TextInput = ({
           placeholder={placeholder}
           className={className}
           type={type}
-          ref={nameRef}
-          onKeyDown={checkEmail}
+          ref={name}
         />
 
         {invalidEmail && (
