@@ -1,6 +1,6 @@
 import React from "react";
 import HoverCard from "./components/HoverCard";
-import EmailInput from "./components/Input/EmailInput";
+import Form from "./components/Input/Form";
 import RadioGroups from "./components/RadioGroups";
 import Toggle from "./components/Toggle";
 import Badge from "./components/Badge";
@@ -18,7 +18,7 @@ function App() {
         </div>
         <div className="main-container">
           <RadioGroups />
-          <EmailInput />
+          <Form className="flex h-52 flex-col text-sm gap-3 lg:h-[160px] transition duration-200 border border-zinc-800 rounded-xl items-center justify-center" />
         </div>
         <div className="main-container">
           <div className="grid grid-cols-2 sm:grid-cols-1 gap-x-2">
